@@ -34,6 +34,11 @@ export class BasicLambdaRole extends Role {
               ],
               resources: ["*"],
             }),
+            new PolicyStatement({
+              effect: Effect.ALLOW,
+              actions: ["ssm:GetParameter"],
+              resources: ["*"],
+            }),
           ],
         }),
       },

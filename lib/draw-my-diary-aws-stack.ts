@@ -68,6 +68,9 @@ export class DrawMyDiaryAwsStack extends cdk.Stack {
       timeout: cdk.Duration.seconds(30),
       description: "Lambda for draw my diary app",
       role: basicLambdaRole,
+      environment: {
+        API_KEY_PARAM_PATH: "/DMD/DEV/GEMINI_API_KEY",
+      },
     });
 
     // Assign lambdas to API Gateway
